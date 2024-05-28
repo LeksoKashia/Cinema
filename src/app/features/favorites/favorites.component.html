@@ -1,0 +1,55 @@
+
+@if(loading$ | async) {
+
+  <div class="loader-container">
+    <span class="loader"></span>
+  </div>
+}@else{
+<div class="favorites-wrapper">
+  <button
+    id="scrollButton"
+    class="scroll-button button-24"
+    (click)="scrollToFavorites()"
+  >
+    Scroll to Favorites
+  </button>
+
+    <div class="flex">
+      <app-pagination
+      [totalPages]="totalPages"
+      (pageChange)="setPage($event)"
+      ></app-pagination>
+    <div>
+      <h1 class="big-text">Crowd Favorites</h1>
+      <ng-container *ngFor="let movie of paginatedMovies">
+        <app-wide-movie-card [movie]="movie">
+          <div class="actions">
+            <button class="btn watch" [routerLink]="['/movie', movie.id]">
+              Watch
+            </button>
+          </div>
+        </app-wide-movie-card>
+      </ng-container>
+      <h1 class="big-text" #myFavorites>Personal Favorites</h1>
+      @for (movie of (favoriteMovies$ | async); track movie) {
+        <app-wide-movie-card [movie]="movie">
+
+          <div class="actions">
+            <button class="btn drop del" (click)="dropMovie(movie.id)">
+              Drop
+            </button>
+            <button class="btn watch" [routerLink]="['/movie', movie.id]">
+              Watch
+            </button>
+          </div>
+        </app-wide-movie-card>
+      } @empty{
+        <h1 class="big-text danger">there are no personal favorite movies</h1>
+      }
+    </div>
+  </div>
+  
+</div>
+<app-footer></app-footer>
+}
+
