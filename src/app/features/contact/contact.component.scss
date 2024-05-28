@@ -1,14 +1,15 @@
 .right_conatct_social_icon {
-  background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
 }
 .contact_us {
 //   background-color: #f1f1f1;
   padding: 120px 0px;
   color: white;
+  padding-bottom: 30px;
 }
 
 .contact_inner {
-  background: linear-gradient(to top right, #222c9b -5%, #4b1a5a 100%);
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
 
   position: relative;
 //   box-shadow: 20px 22px 44px #cccc;
@@ -29,7 +30,7 @@
   margin-bottom: 10px;
 }
 .contact_field p {
-  color: #000;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -39,6 +40,7 @@
   border-radius: 0px;
   border: none;
   border-bottom: 1px solid #ccc;
+  background-color: rgb(122 117 117 / 17%);
 }
 .contact_field .form-control:focus {
   box-shadow: none;
@@ -48,11 +50,12 @@
 .contact_field .form-control::placeholder {
   font-size: 13px;
   letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.753);
 }
 
 .contact_info_sec {
   position: absolute;
-  background-color: #2d2d2d;
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
   right: 1px;
   top: 18%;
   height: 340px;
@@ -103,6 +106,7 @@ button.contact_form_submit {
 .map_sec {
   padding: 50px 0px;
   color: white;
+  padding-top: 0;
 }
 .map_inner h4,
 .map_inner p {
@@ -112,7 +116,6 @@ button.contact_form_submit {
   font-size: 13px;
 }
 .map_bind {
-  margin-top: 50px;
   border-radius: 30px;
   overflow: hidden;
 }

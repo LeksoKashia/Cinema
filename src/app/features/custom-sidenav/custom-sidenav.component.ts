@@ -75,15 +75,10 @@ export class CustomSidenavComponent implements OnInit {
       route: 'watchlist',
     },
     {
-      icon: 'support',
-      label: 'Support',
-      route: 'support',
-    },
-    {
       icon: 'people',
-      label: 'About Us',
-      route: 'aboutus',
-    },
+      label: 'contact',
+      route: 'contact',
+    }
   ]);
 
   profilePicSize = computed(() => (this.sideNavCollapsed() ? '32' : '100'));
