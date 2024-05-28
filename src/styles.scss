@@ -1,1 +1,217 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  margin: 0;
+  --primary-color: #cc0000;
+}
+
+* {
+  color: whitw;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: black;
+}
+
+$mat-primary: (
+  main: #cc0000,
+  lighter: #f0b3b3,
+  darker: #b90000,
+  200: #cc0000,
+  contrast: (
+    main: #ffffff,
+    lighter: #000000,
+    darker: #ffffff,
+  ),
+);
+
+$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+$theme-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $theme-primary,
+      accent: $theme-accent,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+
+.movie-list h1,
+.big-text,
+.big-title {
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  margin: 0;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.big-text {
+  font-size: 3.5rem;
+  color: white;
+}
+
+.movie-list h1,
+.big-title {
+  font-size: 2.7rem;
+}
+
+.mat-mdc-snack-bar-container {
+  &.red-snackbar {
+    --mdc-snackbar-container-color: #f8d7da;
+    --mat-mdc-snack-bar-button-color: #fdfdfd;
+    --mdc-snackbar-supporting-text-color: #721c24;
+  }
+
+  &.green-snackbar {
+    --mdc-snackbar-container-color: #d4edda;
+    --mat-mdc-snack-bar-button-color: #fdfdfd;
+    --mdc-snackbar-supporting-text-color: #155724;
+  }
+}
+
+.loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.4em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.4em 0.4em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.4em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.4em 0.4em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.4em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.4em -0.4em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.4em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.4em -0.4em 0 0 currentcolor;
+  }
+}
+
+.btn {
+  font-size: 16px;
+  border: 0;
+  background-color: rgba(249, 249, 249, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  font-weight: 800;
+}
+
+.drop {
+  color: white;
+  padding: 10px 14px;
+  width: 100px;
+}
+
+.drop:hover {
+  background-color: rgba(249, 249, 249, 0.392);
+}
+
+.del:hover {
+  background-color: rgba(255, 0, 0, 0.868);
+}
+
+.watch {
+  background-color: #f8b319;
+  width: 100px;
+  border: 2px solid rgba(248, 177, 25, 0);
+}
+
+.watch:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(248, 179, 25, 1);
+  color: rgba(248, 179, 25, 1);
+  backdrop-filter: none;
+}
