@@ -1,0 +1,72 @@
+
+
+
+  <div class="layout">
+    <div class="loader-container" *ngIf="loading$ | async; else content" >
+      <span *ngIf="loading$ | async" class="loader"></span>
+    </div>
+
+    
+    <ng-template #content>
+      <section class="main">
+        <app-carousel class="carousel" [movies]="movies">
+          
+        </app-carousel>
+    
+        <div class="movie-list" >  
+            <div class="category-container">
+              <h1 class="category-name">{{movieCategory}}</h1>
+              <select (change)="fetchMovie($event)" [value]="selectedOption">
+                <option value="trending">trending</option>
+                <option value="action">action</option>
+                <option value="adventure">adventure</option>
+                <option value="animation">animation</option>
+                <option value="comedy">comedy</option>
+                <option value="documentary">documentary</option>
+                <option value="science">science</option>
+                <option value="thriller">thriller</option>
+              </select>
+            </div>
+        
+              
+          
+              <div class="movie-container" >
+                <div *ngFor="let movie of movies.slice(0, 4)">
+                  <app-movie-card [movie]="movie"></app-movie-card>
+                </div>
+              </div>
+            </div>
+          
+      </section>
+    
+      
+      <app-suggestions></app-suggestions>
+
+      <section>
+
+        <h1 class="section-title big-title">Play Mobile Games</h1>
+        <div class="games">
+      
+          <div class="texts">
+            <h2 class="main-text" style="font-size: 2rem;">
+              Mobile games now included in every plan
+            </h2>
+      
+            <p class="sub-text" style="font-size: 1.1rem;">
+              Experience a seamless gaming journey with absolutely no interruptions – no ads to distract you, no extra fees to
+              worry about, and absolutely no in-app purchases.
+            </p>
+          </div>
+      
+          <div class="game-photo">
+      
+          </div>
+      
+        </div>
+      </section>
+      <app-footer></app-footer>
+    </ng-template>
+  </div>
+
+
+ 

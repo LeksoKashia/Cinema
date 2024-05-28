@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+  color: white !important;
+}
+
+
+  .movie-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .movie-container{
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+    // margin: 0 auto;
+    // padding: 10px;
+  }
+
+  .category-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // width: 100%;
+    // margin: 0 auto;
+    padding: 20px 40px;
+  }
+
+  .title{
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+
+
+  .main{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+.carousel{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+  
+ 
+
+
+// select
+select {
+  height: 55px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #c11b1b;
+  cursor: pointer;
+  background-color: #ff7878;
+  background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 74%);  
+}
+
+
+select::after {
+  content: '\25BC'; 
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+}
+
+
+select:hover,
+select:focus {
+  border-color: #ff0000; 
+}
+
+// games
+.section-title{
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.games{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 95%;
+  margin: 0 auto;
+  background: linear-gradient(97deg, #45172B 1.27%, #120C1F 75.23%);
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+
+.texts{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 50%;
+}
+
+.game-photo{
+  width: 50%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/nmhp/games-banner-image-cropped.png);
+  background-size: cover;
+}
+
+
+
