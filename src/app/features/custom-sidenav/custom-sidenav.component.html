@@ -1,0 +1,159 @@
+<div class="sidenav-header no-scroll">
+  <img
+    [width]="profilePicSize()"
+    [height]="profilePicSize()"
+    src="https://img.freepik.com/free-photo/view-3d-cinema-elements_23-2150720822.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1715558400&semt=sph"
+    alt=""
+  />
+  <div class="header-text" [class.hide-header-text]="sideNavCollapsed()">
+    <h2>Movie World</h2>
+    <p>Lekso Kashia</p>
+  </div>
+  <mat-nav-list>
+    <a
+      mat-list-item
+      *ngFor="let item of menuItems()"
+      class="menu-item"
+      [routerLink]="item.route"
+      routerLinkActive="selected-menu-item"
+      #rla="routerLinkActive"
+      [activated]="rla.isActive"
+      style="text-align: start"
+    >
+      <mat-icon
+        [style.color]="rla.isActive ? 'red' : 'white'"
+        [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+        matListItemIcon
+        >{{ item.icon }}</mat-icon
+      >
+      <span
+        matListItemTitle
+        [style.color]="rla.isActive ? 'red' : 'white'"
+        *ngIf="!sideNavCollapsed()"
+        >{{ item.label }}</span
+      >
+    </a>
+  </mat-nav-list>
+
+  <section style="padding: 10px">
+    <div *ngIf="!sideNavCollapsed()">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4px;
+          border-top: 3px solid rgb(55 65 81 / 1);
+          padding-top: 10px;
+          flex-direction: column;
+        "
+      >
+        <h6
+          style="
+            padding-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-align: start;
+          "
+        >
+          Favorites preview
+        </h6>
+
+        <div
+          class="no-scroll"
+          *ngIf="favoriteMovies.length > 0"
+          #containerToDrag
+          style="
+            padding: 7px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+          "
+        >
+          <div
+            *ngFor="let b of favoriteMovies; let i = index"
+            class="movie"
+            style="
+              border-radius: 12px;
+              width: 100%;
+              height: 130px;
+              position: relative;
+            "
+          >
+            <img
+              src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}"
+              alt=""
+              style="
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                filter: brightness(0.5);
+              "
+            />
+
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                position: absolute;
+                bottom: 0;
+                padding: 5px 3px;
+              "
+            >
+              <button class="btn drop del" (click)="dropMovie(b.id)">
+                Drop
+              </button>
+              <button class="btn watch" [routerLink]="['/movie', b.id]">
+                Watch
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        *ngIf="favoriteMovies.length < 1"
+        style="
+          width: 100%;
+          height: 130px;
+          background: linear-gradient(97deg, #234264 1.27%, #1b1032 75.23%);
+          padding: 7px 15px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 12px;
+        "
+      >
+        <h1 style="color: white; font-size: 24px">No Movies</h1>
+      </div>
+    </div>
+
+    <div
+      *ngIf="sideNavCollapsed()"
+      style="display: flex; flex-direction: column; gap: 10px"
+    >
+      <div
+        *ngFor="let b of favoriteMovies; let i = index"
+        class="movie"
+        style="
+          border-radius: 12px;
+          width: 100%;
+          height: 50px;
+          position: relative;
+        "
+      >
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}"
+          alt=""
+          style="
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            filter: brightness(0.9);
+          "
+        />
+      </div>
+    </div>
+  </section>
+</div>
