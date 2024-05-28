@@ -1,0 +1,32 @@
+<div class="movie_card" id="{{ movie.id }}">
+  <ng-content></ng-content>
+    <div class="info_section">
+      <div class="movie_header">
+        <img
+          class="locandina"
+          [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+          alt="{{ movie.title }}"
+        />
+        <h1>{{ movie.title }}</h1>
+        <h4>
+          {{ movie.release_date | date : "yyyy" }} | {{ movie.original_language }}
+        </h4>
+        <span class="minutes">{{ movie.vote_average * 10 | number : "1.0-0" }}%</span>
+      </div>
+      <div class="movie_desc">
+        <p class="text">{{ movie.overview }}</p>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <li><i class="material-icons">share</i></li>
+          <li><i class="material-icons" (click)="addMovie(movie)"></i></li>
+          <li><i class="material-icons">chat_bubble</i></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="blur_back ave_back"
+      [style.background-image]="'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'"
+    ></div>
+  </div>
+  

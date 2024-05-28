@@ -1,0 +1,16 @@
+<div class="container">
+
+  <ul class="pagination">
+    <li (click)="previousPage()" [class.disabled]="currentPage === 1">
+      <a>Prev</a>
+    </li>
+    <ng-container *ngFor="let page of pagesArray; let i = index">
+      <li (click)="selectPage(i + 1)" [class.active]="currentPage === i + 1">
+        <a>{{ i + 1 }}</a>
+      </li>
+    </ng-container>
+    <li (click)="nextPage()" [class.disabled]="currentPage === totalPages">
+      <a>Next</a>
+    </li>
+  </ul>
+</div>

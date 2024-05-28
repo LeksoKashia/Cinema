@@ -1,0 +1,317 @@
+.carousel-inner {
+  height: 700px;
+}
+
+.carousel-inner .carousel-item img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.carousel-caption h2 {
+  color: #e50914;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.carousel-caption p {
+  color: #ffffff;
+}
+
+.rowposter {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.rowimg {
+  max-height: 100px;
+  object-fit: contain;
+  width: 100%;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  margin-right: 7px;
+}
+
+.rowimg:hover {
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.largeposter {
+  max-height: 300px;
+}
+
+.rowposter::-webkit-scrollbar {
+  display: none;
+}
+
+//offers
+
+section {
+  width: 95%;
+  margin: 50px auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 15px;
+  // text-align: center;
+}
+
+.offers {
+  display: flex;
+  gap: 50px;
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer {
+  height: 300px;
+  width: 22%;
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #cbcbcb;
+}
+
+.sub-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.349);
+  font-weight: 400;
+}
+
+.svg {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+//games
+
+.games {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  background: linear-gradient(97deg, #45172b 1.27%, #120c1f 75.23%);
+  border-radius: 20px;
+  padding: 40px 0 0 40px;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 50%;
+}
+
+.game-photo {
+  width: 50%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/nmhp/games-banner-image-cropped.png);
+  background-size: cover;
+}
+
+//movies
+
+.movies {
+  width: 90%;
+  height: 400px;
+  margin: 100px auto;
+  background: linear-gradient(97deg, #120c1f, #45172b 75.23%);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+
+.moviesss {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.site-movies {
+  width: 180px;
+  height: 250px;
+  transition: transform 450ms;
+  border-radius: 5px;
+}
+.site-movies:hover {
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #c11b1b;
+  cursor: pointer;
+  background-color: #ff7878;
+  background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 74%);
+}
+
+select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+}
+
+select:hover,
+select:focus {
+  border-color: #ff0000;
+}
+
+.svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.svg:hover {
+  transform: rotate(-15deg);
+}
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+
+  // background: linear-gradient(
+  //     45deg,
+  //     #ff0000,
+  //     #59ff00,
+  //     #ff0000,
+  //     #ff0000,
+  //     #f2ff00,
+  //     #ff0000,
+  //     #ff0000,
+  //     #ff0000,
+  //     #006aff,
+  //     #ff0000,
+  //     #ff0000,
+
+  //   );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ff7878;
+  background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 74%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 970px) {
+  .offers {
+    flex-direction: column;
+  }
+
+  .offer {
+    width: 90%;
+  }
+
+  .movies {
+    flex-direction: column;
+    height: unset;
+    padding: 50px;
+  }
+
+  .texts {
+    width: 100% !important;
+  }
+
+  .texts-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .games {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .site-movies {
+    width: 100px;
+    height: 150px;
+  }
+}

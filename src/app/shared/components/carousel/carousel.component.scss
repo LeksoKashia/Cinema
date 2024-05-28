@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.main-container{
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.background-image{
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.6);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+.Information{
+    position: absolute;
+    top: 0;
+    padding: 70px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.actions{
+  display: flex;
+  gap: 30px;
+  margin-top: 238px;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 55px;
+  padding-bottom: 95px ;
+}
+.vote-average{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 0;
+
+}
+.production{
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    margin: 0;
+    letter-spacing: 4px;
+
+}
+
+.title{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+    font-variation-settings:
+      "wdth" 100;
+      margin: 0;
+  }
+
+  .button-24 {
+    background: #ac1b1b;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 20px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 150px;
+    -webkit-transition: all .2s ease-in-out;
+
+  }
+  
+  .button-24:hover,
+  .button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+    -webkit-transform: scale(1.1);
+  }
+  
+  .button-24:active {
+    opacity: .5;
+  }
+
+  .vote{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+
+  .arrow{
+    padding: 12px 15px;
+    border: 0;
+    background-color: #ac1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    position: absolute;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+  
+  }
+
+  .carousel-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 55px;
+  }
+  
+  .mini-carousel{
+    position: relative;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.313);
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+  }
+
+  .arrow:hover{
+    background-color: #ac1b1ba3;
+  }
+  
+  .prev{
+    top: 50%;
+    left: -10px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .next{
+    top: 50%;
+    right: -50px;
+    transform: translate(-50%, -50%);
+  
+  }
+
+
+  .carousel-image{
+    width: 140px;
+    height: 100px;
+    border-radius: 7px;
+  }
+
+  .current{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+//   .slide-animation {
+//     animation: slide 0.9s ease;
+//   }
+  
+//   @keyframes slide {
+//     from {
+//       opacity: 0;
+//       transform: translateX(-100%);
+//     }
+//     to {
+//       opacity: 1;
+//       transform: translateX(100%);
+//     }
+//   }
+  
+
+.arro1{
+  border: 0;
+  background-color: rgba(249, 249, 249, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  height: min-content;
+  width: 150px;
+
+}
+
+.arro1:hover{
+  background-color: rgba(249, 249, 249, 0.353);
+}
+
+.watchlist{
+  font-weight: 800;
+  font-size: 16px;
+  padding: 17px 14px;
+  color: white;
+}
+
+em{
+  font-size: 1.5rem;
+  color: rgba(244, 235, 235, 0.813); 
+}
+
+.slide-in {
+  animation: slideInRight 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(0%);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+      transform: translateX(0%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
