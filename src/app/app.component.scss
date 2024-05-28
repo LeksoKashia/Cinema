@@ -1,0 +1,54 @@
+mat-toolbar {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
+  color: white;
+}
+
+.content {
+  background: linear-gradient(97deg, #0c1d3090 1.27%, #120c1fa5 75.23%);
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  transition: all 500ms ease-in-out;
+}
+
+mat-sidenav {
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
+  color: white;
+}
+
+.mat-icon-button {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.sidenav-header {
+  height: 400px;
+}
+.sidenav-header::-webkit-scrollbar,
+.third-col::-webkit-scrollbar {
+  width: 0;
+}
+
+.sidenav-header::-webkit-scrollbar-track,
+.third-col::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.sidenav-header::-webkit-scrollbar-thumb,
+.third-col::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+
+mat-sidenav-container{
+  background-color: black;
+}

@@ -6,7 +6,7 @@ import { Movie } from '../../shared/models/movie';
 import { MovieCardComponent } from '../../shared/components/movie-card/movie-card.component';
 import { CarouselComponent } from '../../shared/components/carousel/carousel.component';
 import { FooterComponent } from '../footer/footer.component';
-import { SuggestionsComponent } from '../../shared/suggestions/suggestions.component';
+import { SuggestionsComponent } from '../../shared/components/suggestions/suggestions.component';
 
 @Component({
   selector: 'app-home',
