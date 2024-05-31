@@ -1,11 +1,8 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
-  ElementRef,
   Input,
   OnInit,
-  QueryList,
-  ViewChildren,
   computed,
   signal,
 } from '@angular/core';
@@ -14,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { HomeService } from '../../core/services/key.service';
 import { Movie } from '../../shared/models/movie';
+import { Observable } from 'rxjs';
 
 export type menuItem = {
   icon: string;
@@ -29,21 +27,22 @@ export type menuItem = {
   styleUrl: './custom-sidenav.component.scss',
 })
 export class CustomSidenavComponent implements OnInit {
+
   favoriteMovies: any[] = [];
   showToast$ = this.homeService.showToast$;
+  favoriteMovies$!: Observable<Movie[]>;
   sideNavCollapsed = signal(false);
   @Input() set collapsed(val: boolean) {
     this.sideNavCollapsed.set(val);
   }
-
+  
   constructor(private homeService: HomeService) {}
 
   ngOnInit(): void {
-    console.log('axlidan chaitrvirta');
-    this.homeService.userData.subscribe((res) => {
-      this.favoriteMovies = res;
-      console.log('sidenav', res);
-    });
+    this.homeService.userData.subscribe((res) => console.log(res)
+  )
+    this.favoriteMovies$ = this.homeService.userData;
+    this.favoriteMovies$.subscribe((res)=>console.log(res))
   }
 
   dropMovie(id: number) {
