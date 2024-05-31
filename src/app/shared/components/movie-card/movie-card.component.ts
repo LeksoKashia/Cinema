@@ -15,7 +15,6 @@ import { HomeService } from '../../../core/services/key.service';
 export class MovieCardComponent {
   @Input() movie!: Movie;
   favorite!: boolean;
-  loading$ = this.homeService.favoritesArray$;
 
   constructor(private router: Router, private homeService: HomeService) {}
 

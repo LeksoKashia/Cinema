@@ -117,9 +117,12 @@
   <span class="loader"></span>
 </div>
 }@else{
+<h1 class="big-text">{{resultsTitle}} <strong style="color: rgba(255, 255, 255, 0.623);">{{searchQuery}}</strong></h1>
 <div class="movie-container">
   @for (movie of movies; track movie) {
-  <app-movie-card [movie]="movie"></app-movie-card>
+    <div class="movie-card-container" style="width: 22%;">
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </div>
   }
 </div>
 } }

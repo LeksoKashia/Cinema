@@ -21,13 +21,39 @@
 
 
 .movie-card{
-  width:300px;
-  height:500px;
+  width:100%;
+  height:600px;
   border-radius:35px;
   position:relative;
   box-shadow:0 0 50px #0F274D;
 }
 
+@media only screen and (max-width: 1710px) {
+  .movie-card {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .movie-card {
+    height: 450px;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .movie-card {
+    height: 350px;
+  }
+}
+
+
+
+// @media only screen and (min-width: 1100px) {
+//   .movie-card{
+//     height:300px;
+//   }
+// }
 .movie-card-second{
   margin-top:50px;
 }
@@ -121,7 +147,7 @@
 
 .movie-card .content-card .shadow{
   width:100%;
-  height:170px;
+  height:45%;
   display:block;
   position:absolute;
   bottom:0;
@@ -180,6 +206,7 @@
   gap:10px;
   margin-top:15px;
   margin-bottom:20px;
+  flex-wrap: wrap;
 }
 
 
@@ -202,20 +229,6 @@
 
 
 
-
-@media (min-width: 0px) and (max-width: 700px){
-  body{
-    grid-template-columns:auto;
-    gap:50px;
-    margin:60px 0;
-  }
-  
-  body:after{
-    top:-40px;
-    height:calc(100% + 590px);
-  }
-  
-}
 
 .favorite, .watchlist{
   position: absolute;

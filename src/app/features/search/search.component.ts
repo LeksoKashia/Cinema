@@ -25,14 +25,12 @@ import { HomeService } from '../../core/services/key.service';
   styleUrl: './search.component.scss',
 })
 export class SearchComponent implements OnInit {
-  /**
-   * 1. Create an interface for a movie. ok, use it :D
-   * 2. Remake movies to observable, use async pipe.
-   */
-  searchForm!: FormGroup;
-  showResults: boolean = false;
-
   loading$ = this.loader.isLoading$;
+  movies$!: Observable<Movie[]>;
+  searchForm!: FormGroup;
+  resultsTitle : string = "Popular Movies"
+  searchQuery : string = '';
+
 
   apiUrl = 'https://api.themoviedb.org/3/movie/popular';
   constructor(
@@ -42,16 +40,6 @@ export class SearchComponent implements OnInit {
     private homeService: HomeService
   ) {}
 
-  // ngOnInit(): void {
-  //   this.searchForm = this.formBuilder.group({
-  //     searchInput: ['']
-  //   });
-  //   // this.homeService.fetchPopularMovies().subscribe((res) => console.log(res))
-  //   // this.movies$.subscribe((res) => console.log(res));
-  //   this.onSubmit();
-  // }
-
-  movies$!: Observable<Movie[]>;
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
       searchInput: [''],
@@ -59,15 +47,20 @@ export class SearchComponent implements OnInit {
 
     this.movies$ = this.searchForm.valueChanges.pipe(
       startWith({ searchInput: '' }),
-      debounceTime(300),
+      debounceTime(700),
       switchMap((value) => this.fetchMovies(value.searchInput))
     );
   }
 
   private fetchMovies(query: string): Observable<Movie[]> {
     if (query.trim() === '') {
+      this.resultsTitle = "Popular Movies"
+      this. searchQuery = '';
       return this.homeService.fetchPopularMovies();
     }
+    this. searchQuery = query;
+    this.resultsTitle = "Search Results For "
+
     return this.http
       .get<ApiResponse<Movie[]>>(
         `https://api.themoviedb.org/3/search/movie?query=${query}`
