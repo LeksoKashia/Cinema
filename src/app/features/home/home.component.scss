@@ -10,25 +10,22 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
   }
   .movie-container{
     padding-top: 20px;
     display: flex;
-    flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
     align-items: center;
-    // width: 100%;
-    // margin: 0 auto;
-    // padding: 10px;
+
   }
 
   .category-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // width: 100%;
-    // margin: 0 auto;
     padding: 20px 40px;
   }
 
@@ -53,10 +50,11 @@
   justify-content: center;
 }
   
+.movie-card-container{
+  width: 23%;
+}
  
 
-
-// select
 select {
   height: 55px;
   border: none;

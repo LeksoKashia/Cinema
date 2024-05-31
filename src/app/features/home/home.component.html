@@ -31,7 +31,7 @@
               
           
               <div class="movie-container" >
-                <div *ngFor="let movie of movies.slice(0, 4)">
+                <div *ngFor="let movie of movies.slice(0, 4)"  class="movie-card-container" >
                   <app-movie-card [movie]="movie"></app-movie-card>
                 </div>
               </div>
